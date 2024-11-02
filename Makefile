@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/02 19:25:04 by gabriel          ###   ########.fr        #
+#    Updated: 2024/11/02 19:33:14 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ DEPS	= $(patsubst %.c, ${OBJ_DIR}/%.d, ${SRC}) $(patsubst ${SRC_DIR}/libft/%.c, 
 #OBJS	= $(patsubst %.c, ${OBJ_DIR}/%.o, ${SRC} ${GNL_LIBFT_SRC})
 #DEPS	= $(patsubst %.c, ${OBJ_DIR}/%.d, ${SRC} ${GNL_LIBFT_SRC})
 
-all: folders ${SRCS} ${HDRS} ${BIN_DIR}/${NAME}
+all: folders ${BIN_DIR}/${NAME}
 
 ${SRCS}:
 	@echo "Importing libft source..."
@@ -100,7 +100,7 @@ ${HDRS}:
 	@git submodule update --init
 	@cp ${LIBFT_DIR}/include/libft.h ${INC_DIR}/libft/libft.h
 
-${BIN_DIR}/${NAME}: ${OBJS} Makefile
+${BIN_DIR}/${NAME}: ${SRCS} ${HDRS} ${OBJS} Makefile
 	@echo "\t${CYAN}Linking ${NAME}${RST}"
 	ar -rcs ${BIN_DIR}/${NAME} ${OBJS}
 
@@ -110,6 +110,7 @@ ${OBJ_DIR}/%.o:${SRC_DIR}/%.c Makefile
 
 clean:
 	rm -rf ${OBJ_DIR}
+	rm -rf ${SRC_DIR}/libft/
 
 fclean: clean 
 	rm -rf ${BIN_DIR}
