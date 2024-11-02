@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
+#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/01 23:15:51 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/11/02 19:25:04 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ all: folders ${SRCS} ${HDRS} ${BIN_DIR}/${NAME}
 
 ${SRCS}:
 	@echo "Importing libft source..."
-	@git submodule update --init
+	@git submodule update --init --recursive --remote 
 	@cp ${LIBFT_DIR}/src/ft_strjoin.c ${SRC_DIR}/libft/ft_strjoin.c
 	@cp ${LIBFT_DIR}/src/ft_strlen.c ${SRC_DIR}/libft/ft_strlen.c
 	@cp ${LIBFT_DIR}/src/ft_istrchr.c ${SRC_DIR}/libft/ft_istrchr.c
