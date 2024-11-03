@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/02 19:33:14 by gabriel          ###   ########.fr        #
+#    Updated: 2024/11/03 23:08:41 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ ${HDRS}:
 
 ${BIN_DIR}/${NAME}: ${SRCS} ${HDRS} ${OBJS} Makefile
 	@echo "\t${CYAN}Linking ${NAME}${RST}"
-	ar -rcs ${BIN_DIR}/${NAME} ${OBJS}
+	@ar -rcs ${BIN_DIR}/${NAME} ${OBJS}
 
 ${OBJ_DIR}/%.o:${SRC_DIR}/%.c Makefile
 	@echo "\t${YELLOW}Compiling ${RST} $<"
