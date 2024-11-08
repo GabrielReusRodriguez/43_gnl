@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/13 02:39:39 by greus-ro          #+#    #+#              #
-#    Updated: 2024/11/03 23:08:41 by gabriel          ###   ########.fr        #
+#    Updated: 2024/11/08 13:18:40 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,11 +109,11 @@ ${OBJ_DIR}/%.o:${SRC_DIR}/%.c Makefile
 	@${CC} ${CFLAGS} ${SANITIZE_FLAGS} ${DFLAGS} -I ${INC_DIR} -I ${INC_DIR}/libft -o $@ -c $<
 
 clean:
-	rm -rf ${OBJ_DIR}
-	rm -rf ${SRC_DIR}/libft/
+	@rm -rf ${OBJ_DIR}
+	@rm -rf ${SRC_DIR}/libft/
 
 fclean: clean 
-	rm -rf ${BIN_DIR}
+	@rm -rf ${BIN_DIR}
 
 re: fclean all
 
